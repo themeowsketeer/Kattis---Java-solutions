@@ -16,5 +16,6 @@ public class justaminute {
         } else {
             System.out.print(String.format("%.10g%n", result));
         }
+        input.close();
     }
 }

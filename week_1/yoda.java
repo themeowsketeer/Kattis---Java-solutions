@@ -15,6 +15,8 @@ public class yoda {
         while (size > 0) {
             figure = figure % 10;
             size--;
+            sample.add(figure);
         }
+        input.close();
     }
 }
