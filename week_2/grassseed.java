@@ -3,16 +3,16 @@ import java.util.Scanner;
 public class grassseed {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        double C = input.nextDouble();
-        int L = input.nextInt();
-        double sum = 0.0;
-        for (int i = 0; i < L; i++) {
+        double seedCostPerMetre = input.nextDouble();
+        int numLawn = input.nextInt();
+        double sumLawn = 0.0;
+        for (int i = 0; i < numLawn; i++) {
             double width = input.nextDouble();
             double length = input.nextDouble();
-            sum += width * length;
+            sumLawn += width * length;
         }
         input.close();
-        sum *= C;
-        System.out.println(String.format("%.9g%n", sum));
+        sumLawn *= seedCostPerMetre;
+        System.out.println(String.format("%.9g%n", sumLawn));
     }
 }

@@ -39,27 +39,27 @@ public class parking {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int A = input.nextInt();
-        int B = input.nextInt();
-        int C = input.nextInt();
-        int count_1 = 0;
-        int count_2 = 0;
-        int count_3 = 0;
-        List<Integer> sample = new ArrayList<Integer>();
+        int time1Car = input.nextInt();
+        int time2Car = input.nextInt();
+        int time3Car = input.nextInt();
+        int count_time1car = 0;
+        int count_time2car = 0;
+        int count_time3car = 0;
+        List<Integer> parkingTime = new ArrayList<Integer>();
         for (int i = 0; i < 6; i++) {
-            sample.add(input.nextInt());
+            parkingTime.add(input.nextInt());
         }
         input.close();
-        for (int i = Collections.min(sample); i < Collections.max(sample); i++) {
-            if (check_3(sample, i)) {
-                count_3 += 3;
-            } else if (check_2(sample, i)) {
-                count_2 += 2;
-            } else if (check_1(sample, i)) {
-                count_1++;
+        for (int i = Collections.min(parkingTime); i < Collections.max(parkingTime); i++) {
+            if (check_3(parkingTime, i)) {
+                count_time3car += 3;
+            } else if (check_2(parkingTime, i)) {
+                count_time2car += 2;
+            } else if (check_1(parkingTime, i)) {
+                count_time1car++;
             }
         }
-        int result = (A * count_1) + (B * count_2) + (C * count_3);
+        int result = (time1Car * count_time1car) + (time2Car * count_time2car) + (time3Car * count_time3car);
         System.out.println(result);
     }
 }

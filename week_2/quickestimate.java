@@ -3,15 +3,15 @@ import java.util.Scanner;
 public class quickestimate {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int N = input.nextInt();
-        int result[] = new int[N];
-        for (int i = 0; i < N; i++) {
-            String number = input.next();
-            result[i] = number.length();
+        int numTestcase = input.nextInt();
+        int digitEachCost[] = new int[numTestcase];
+        for (int i = 0; i < numTestcase; i++) {
+            String estimatedCost = input.next();
+            digitEachCost[i] = estimatedCost.length();
         }
         input.close();
-        for (int i = 0; i < N; i++) {
-            System.out.println(result[i]);
+        for (int i = 0; i < numTestcase; i++) {
+            System.out.println(digitEachCost[i]);
         }
     }
 }

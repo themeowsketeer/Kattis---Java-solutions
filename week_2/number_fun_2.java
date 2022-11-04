@@ -20,16 +20,16 @@ public class number_fun_2 {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int N = input.nextInt();
-        String result[] = new String[N];
-        for (int i = 0; i < N; i++) {
-            double A = input.nextDouble();
-            double B = input.nextDouble();
-            double C = input.nextDouble();
-            result[i] = calculation(A, B, C);
+        int numTestcase = input.nextInt();
+        String result[] = new String[numTestcase];
+        for (int i = 0; i < numTestcase; i++) {
+            double numA = input.nextDouble();
+            double numB = input.nextDouble();
+            double numC = input.nextDouble();
+            result[i] = calculation(numA, numB, numC);
         }
         input.close();
-        for (int i = 0; i < N; i++) {
+        for (int i = 0; i < numTestcase; i++) {
             System.out.println(result[i]);
         }
     }
