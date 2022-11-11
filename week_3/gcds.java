@@ -10,5 +10,8 @@ public class gcds {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int seqLength = input.nextInt();
+        for (int i = 0; i < seqLength; i++) {
+
+        }
     }
 }
