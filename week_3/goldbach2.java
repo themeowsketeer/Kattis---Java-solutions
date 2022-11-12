@@ -1,8 +1,8 @@
 import java.util.*;
 
-class goldbach2 {
+public class goldbach2 {
 
-    static int MAX = 10000;
+    static int MAX = 32000;
     static ArrayList<Integer> primes = new ArrayList<Integer>();
 
     static void sieveSundaram() {
@@ -18,33 +18,36 @@ class goldbach2 {
                 primes.add(2 * i + 1);
     }
 
-    // Function to perform Goldbach's conjecture
     static void findPrimes(int n) {
-        // Return if number is not even or less than 3
-        if (n <= 2 || n % 2 != 0) {
-            System.out.println("Invalid Input ");
-            return;
-        }
+        List<Integer> prime_1 = new ArrayList<>();
+        List<Integer> prime_2 = new ArrayList<>();
+        int representCount = 0;
 
-        // Check only upto half of number
         for (int i = 0; primes.get(i) <= n / 2; i++) {
-            // find difference by subtracting
-            // current prime from n
             int diff = n - primes.get(i);
-
-            // Search if the difference is
-            // also a prime number
             if (primes.contains(diff)) {
-                // Express as a sum of primes
-                System.out.println(primes.get(i) + " + " + diff + " = " + n);
+                prime_1.add(primes.get(i));
+                prime_2.add(diff);
+                representCount++;
             }
+        }
+        System.out.println(n + " has " + representCount + " representation(s)");
+        for (int i = 0; i < representCount; i++) {
+            System.out.println(prime_1.get(i) + "+" + prime_2.get(i));
         }
     }
 
     public static void main(String[] args) {
         sieveSundaram();
-        findPrimes(4);
-        findPrimes(38);
-        findPrimes(100);
+
+        Scanner input = new Scanner(System.in);
+        int testcasesNum = input.nextInt();
+
+        for (int i = 0; i < testcasesNum; i++) {
+            int n = input.nextInt();
+            findPrimes(n);
+            System.out.println();
+        }
+        input.close();
     }
 }
